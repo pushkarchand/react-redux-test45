@@ -16,14 +16,14 @@ const userReducer=(state=initialState,action)=>{
         case constants.fetchUserSuccess:{
           return{
              users:action.payload,
-            isLoading:true,
+            isLoading:false,
             error:''
           }
         }
         case constants.fetchUserFailure:{
           return{
             users:[],
-            isLoading:true,
+            isLoading:false,
             error:action.payload
           }
         }
