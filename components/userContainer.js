@@ -24,16 +24,16 @@ function UserContainer () {
      }
   },[searchName,users])
   return (
-    <React.Fragment>
+    <div>
     <input type="text" placeholde="Search by name" value={searchName} 
     onChange={(event)=>setSearchName(event.target.value)}/>
         {
           isLoading ?(<h2>Loading</h2>
             ):error?(<h2>{error}</h2>)
             :(filteredUsers && filteredUsers.length && filteredUsers.map(user=>{
-            return <p id={user.id}>{user.name}</p>
+            return <p key={user.id}>{user.name}</p>
           }))}
-  </React.Fragment>
+  </div>
   )
 }
 
